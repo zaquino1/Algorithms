@@ -1,5 +1,5 @@
 public class SelectionSort {
-    void sort(int arr[]) {
+    public void sort(int[] arr) {
         int n = arr.length;
 
         // One by one move boundary of unsorted subarray
@@ -19,8 +19,8 @@ public class SelectionSort {
     }
 
     // Driver code to test above
-    public static void main(String args[]) {
-        int arr[] = {64, 25, 12, 22, 11};
+    public static void main(String[] args) {
+        int[] arr = {64, 25, 12, 22, 11};
         SelectionSort ob = new SelectionSort();
         ob.sort(arr);
         System.out.println("Sorted array by Selection Sort:");
