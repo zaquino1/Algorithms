@@ -6,9 +6,13 @@ import algorithms.sorting.advanced.QuickSort;
 import algorithms.sorting.advanced.HeapSort;
 import algorithms.sorting.advanced.ShellSort;
 import algorithms.searching.BinarySearch;
+import algorithms.searching.LinearSearch;
 import datastructures.fundamentals.Stack;
 import datastructures.fundamentals.Queue;
 import datastructures.fundamentals.Bag;
+import datastructures.fundamentals.SinglyLinkedList;
+import datastructures.fundamentals.DoublyLinkedList;
+import datastructures.hashing.HashMap;
 import algorithms.graphs.undirected.DepthFirstSearch;
 import algorithms.graphs.undirected.BreadthFirstSearch;
 import algorithms.graphs.directed.TopologicalSort;
@@ -77,6 +81,11 @@ public class main {
         BinarySearch binarySearch = new BinarySearch();
         int result = binarySearch.search(mergeArr, 25); // Using sorted array
         System.out.println("Found 25 at index: " + result);
+        
+        System.out.println("2. Linear Search");
+        LinearSearch linearSearch = new LinearSearch();
+        int linResult = linearSearch.search(arr, 22); // Using unsorted array
+        System.out.println("Found 22 at index: " + linResult);
 
 
         // --- Fundamentals ---
@@ -103,14 +112,32 @@ public class main {
         }
         System.out.println();
         
-        System.out.println("\n4. Binary Search Tree");
+        System.out.println("\n4. Singly Linked List (with Reversal)");
+        SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
+        sList.insert(1); sList.insert(2); sList.insert(3);
+        System.out.print("Original: "); sList.printList();
+        sList.reverse();
+        System.out.print("Reversed: "); sList.printList();
+        
+        System.out.println("5. Doubly Linked List");
+        DoublyLinkedList<String> dList = new DoublyLinkedList<>();
+        dList.append("A"); dList.append("B"); dList.append("C");
+        dList.printList(true); // Forward and Reverse check
+        
+        System.out.println("6. Hash Map (Custom)");
+        HashMap<String, Integer> map = new HashMap<>(10);
+        map.put("One", 1);
+        map.put("Two", 2);
+        System.out.println("Value for 'One': " + map.get("One"));
+        
+        System.out.println("\n7. Binary Search Tree");
         BinarySearchTree bst = new BinarySearchTree();
         bst.insert(50); bst.insert(30); bst.insert(20); bst.insert(40); bst.insert(70);
         System.out.print("Inorder Traversal: ");
         bst.inorder();
         System.out.println();
         
-        System.out.println("5. AVL Tree (Self-Balancing)");
+        System.out.println("8. AVL Tree (Self-Balancing)");
         AVLTree avl = new AVLTree();
         avl.insert(10); avl.insert(20); avl.insert(30); avl.insert(40); avl.insert(50); avl.insert(25);
         System.out.print("Preorder Traversal: ");
